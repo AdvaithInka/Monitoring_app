@@ -1,0 +1,19 @@
+/* General Page Styles */
+.content {
+    padding: 60px; /* Increased padding */
+    background-color: #efd3ff; /* Light gray background for the content area */
+    border-radius: 0px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Title Styles */
+  h2 {
+    font-size: 40px; /* Larger font size */
+    margin-bottom: 30px; /* Increased bottom margin */
+    color: #630066; /* Blue color for the title */
+    font-weight: bold; /* Bold font */
+    font-family: sans-serif;
+  }
+  
+ 
+  
