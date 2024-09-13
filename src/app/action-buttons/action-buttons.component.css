@@ -1,0 +1,57 @@
+/* Action Buttons */
+  .actions {
+    display: flex;
+    gap: 40px; /* Spacing between buttons */
+    margin-top: 35px; /* Increased top margin */
+  }
+  
+  .actions button {
+    padding:15px 60px; /* Increased padding for buttons */
+    font-size: 16px; /* Slightly larger font */
+    font-weight: bold; /* Bold font */
+    font-family: sans-serif;
+    border: none;
+    border-radius: 50px; /* Rounded corners for buttons */
+    color: white; /* text color */
+    background-color: #0052cc;
+    box-shadow: 2px 2px #06005a;
+  }
+
+  .actions button:hover{
+    color: black; /* text color */
+    background-image: linear-gradient(lightblue, #0052cc);
+  }
+  
+  .actions button.mat-primary {
+    background-color: #4caf50; /* Green color for primary action */
+    color: white; /* text color */
+  }
+  
+  .actions button.mat-warn {
+    background-color: #f44336; /* Red color for warning action */
+    color: white; /* text color */
+  }
+  
+  .actions button.mat-accent {
+    background-color: #ff9800; /* Orange color for secondary action */
+    color: white; /* text color */
+  }
+  
+  .form-group {
+    flex: 0 1 calc(6% - 20px); /* Adjust width and spacing */
+    margin-bottom: 15px;
+    margin-right: 10px; /* Add space between the columns */
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 80%;
+    padding: 15px; /* Increase padding for bigger input boxes */
+    padding-right: 0px;
+    font-size: 16px;
+    border: 1px solid #002f3b;
+    border-radius: 5px;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.2);
+    color: #494949;
+  }
