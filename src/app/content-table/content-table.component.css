@@ -1,0 +1,25 @@
+/* Results Table */
+.results {
+    margin-top: 175px; /* Increased top margin */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px 15px; /* Increased padding for better spacing */
+    border: 1px solid #ddd; /* Light border around cells */
+    text-align: left; /* Left-align text */
+  }
+  
+  th {
+    background-color: #021e46; /* Darker blue for headers */
+    color: white; /* White text color */
+  }
+  
+  td {
+    background-color: #ffffff; /* White background for data cells */
+    color: #333333; /* Dark gray text color */
+  }
