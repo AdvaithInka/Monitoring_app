@@ -1,0 +1,45 @@
+<div class="results">
+  <p>Total Count: {{ assets.length }}</p> <!-- Use dynamic length for total count -->
+
+  <!-- Display message if no assets are found -->
+  <p *ngIf="assets.length === 0">No assets found.</p>
+
+  <!-- Display the table only if assets exist -->
+  <table *ngIf="assets.length > 0">
+    <thead>
+      <tr>
+        <th><input type="checkbox" /></th>
+        <th>MetaData ID</th>
+        <th>Content Type</th>
+        <th>Title Name</th>
+        <th>Season</th>
+        <th>Episode</th>
+        <th>Release Date</th>
+        <th>Monitoring Type</th>
+        <th>Detection Type</th>
+        <th>Takedown Type</th>
+        <th>Status</th>
+        <th>Reg. Date</th>
+        <th>Stopped Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through the assets array to display the data dynamically -->
+      <tr *ngFor="let asset of assets">
+        <td><input type="checkbox" /></td>
+        <td>{{ asset.metaDataId || 'N/A' }}</td> <!-- Handle undefined values -->
+        <td>{{ asset.contentType || 'N/A' }}</td>
+        <td>{{ asset.titleName || 'N/A' }}</td>
+        <td>{{ asset.season || 'N/A' }}</td>
+        <td>{{ asset.episode || 'N/A' }}</td>
+        <td>{{ asset.releaseDate || 'N/A' }}</td>
+        <td>{{ asset.monitoringType || 'N/A' }}</td>
+        <td>{{ asset.detectionType || 'N/A' }}</td>
+        <td>{{ asset.takedownType || 'N/A' }}</td>
+        <td>{{ asset.status || 'N/A' }}</td>
+        <td>{{ asset.regDate || 'N/A' }}</td>
+        <td>{{ asset.stoppedDate || 'N/A' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

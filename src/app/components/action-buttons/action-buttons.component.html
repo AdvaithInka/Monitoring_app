@@ -1,6 +1,6 @@
 <div class="actions">
-    <button>Search</button>                  
-    <button [routerLink]="['/registration']">Register</button>
+  <button (click)="onSearch()">Search</button>
+  <button [routerLink]="['/registration']">Register</button>
     <button>Stop Monitoring</button>                  
     <div class="form-group">
       <select>
@@ -12,8 +12,3 @@
     </div>
     <!-- <button type="button">Excel</button>             -->
 </div>
-<!-- <div class="button-container">
-    <button mat-button (click)="onSearch()">Search</button>
-    <button mat-button (click)="onRegister()">Register</button>
-    <button mat-button (click)="onStopMonitoring()">Stop Monitoring</button>
-</div> -->

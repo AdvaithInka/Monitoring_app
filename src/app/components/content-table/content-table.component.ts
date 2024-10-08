@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-content-table',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./content-table.component.css']
 })
 export class ContentTableComponent {
+
+  @Input() assets: any[] = [];  // Accept the assets array as input
 
 }
