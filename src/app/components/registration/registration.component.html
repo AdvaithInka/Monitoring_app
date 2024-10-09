@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Content</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register Content</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="monitoring-starts">Monitoring Starts</label>
+                <input type="date" id="monitoring-starts" name="monitoringStarts" required>
+            </div>
+            <div class="form-group">
+                <label for="monitoring-ends">Monitoring Ends</label>
+                <input type="date" id="monitoring-ends" name="monitoringEnds" required>
+                <div id="error-message" class="error-badge"></div> <!-- Error message container -->
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <input type="text" id="status" name="status" required>
+            </div>
+            <div class="form-group">
+                <label for="main-genre">Main Genre</label>
+                <input type="text" id="main-genre" name="mainGenre" required>
+            </div>
+            <div class="form-group">
+                <label for="genres">Genres</label>
+                <input type="text" id="genres" name="genres" required>
+            </div>
+            <div class="form-group">
+                <label for="production-company">Production Company</label>
+                <input type="text" id="production-company" name="productionCompany" required>
+            </div>
+            <div class="form-group">
+                <label for="content-rating">Content Rating</label>
+                <input type="text" id="content-rating" name="contentRating" required>
+            </div>
+            <div class="form-group">
+                <label for="country-of-origin">Country of Origin</label>
+                <input type="text" id="country-of-origin" name="countryOfOrigin" required>
+            </div>
+            <div class="form-group">
+                <label for="original-language-of-content">Original Language of Content</label>
+                <input type="text" id="original-language-of-content" name="originalLanguageOfContent" required>
+            </div>
+            <div class="form-group">
+                <label for="release-date">Release Date</label>
+                <input type="date" id="release-date" name="releaseDate" required>
+            </div>
+            <div class="form-group">
+                <label for="official-url">Official URL</label>
+                <input type="url" id="official-url" name="officialUrl" required>
+            </div>
+            <div class="form-group">
+                <label for="coverage">Coverage</label>
+                <input type="text" id="coverage" name="coverage" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <div id="error-message" style="color: red; margin-top: 10px;"></div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const monitoringStarts = document.getElementById('monitoring-starts').value;
+            const monitoringEnds = document.getElementById('monitoring-ends').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Clear previous error messages
+            errorMessage.textContent = '';
+            errorMessage.style.display = 'none';
+
+            if (new Date(monitoringEnds) < new Date(monitoringStarts)) {
+                errorMessage.textContent = 'Monitoring Ends date cannot be before Monitoring Starts date.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            const formData = new FormData(this);
+            const jsonData = {};
+
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonData)
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+    </script>
+</body>
+</html>

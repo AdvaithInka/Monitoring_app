@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MonitoringJobsComponent } from './monitoring-jobs/monitoring-jobs.component';
-import { RegistrationComponent } from './registration/registration.component';
+import { MonitoringJobsComponent } from './components/monitoring-jobs/monitoring-jobs.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/monitoring-jobs', pathMatch: 'full' },
